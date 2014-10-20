@@ -1,5 +1,9 @@
 BookingApp::Application.routes.draw do
   
+resources :sessions
+
+get 'logout', to: 'sessions#destroy', as: 'logout'
+
   resources :classrooms
 
 

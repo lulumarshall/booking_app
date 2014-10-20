@@ -7,7 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<% flash.each do |name, msg| %>
+    <div class="flash-message flash-message-<%= name %>">
+      <%= msg %>
+    </div>
+  <% end %>
+    <%if current_user %>
+    hello <%= current_user.email%>
+    <%=link_to "logout", logout_path%>
+  <%else%>
+  <%=link_to "login", new_session_path%> or <%=link_to "signup", new_user_path%>
+  <%end%>
+<nav>
+<%= link_to('Classrooms', classrooms_path) %>
+  <%= link_to('Courses', courses_path) %>
+  <%= link_to('Profiles', users_path) %>
+  
+</nav>
 <%= yield %>
 
 </body>
