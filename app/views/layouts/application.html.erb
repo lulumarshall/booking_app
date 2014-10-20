@@ -13,7 +13,7 @@
     </div>
   <% end %>
     <%if current_user %>
-    hello <%= current_user.email%>
+    hello <%= current_user.username%>
     <%=link_to "logout", logout_path%>
   <%else%>
   <%=link_to "login", new_session_path%> or <%=link_to "signup", new_user_path%>

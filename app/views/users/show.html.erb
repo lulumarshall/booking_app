@@ -29,6 +29,15 @@
   <%= @user.role %>
 </p>
 
+<p>
+<b>Courses: </b>
+    <%@user.courses.each do |course|%>
+ <li><%=link_to "#{course.name}", course_path %></li>
+  <%end%>
+</p>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+

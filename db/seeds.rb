@@ -56,7 +56,7 @@ classroom1 = Classroom.create!(name: 'Room 1')
 classroom2 = Classroom.create!(name: 'Room 2')
 classroom3 = Classroom.create!(name: 'Room 3')
 classroom4 = Classroom.create!(name: 'Room 4')
-classroom5 = Classroom.create!(name: 'Room 4')
+classroom5 = Classroom.create!(name: 'Room 5')
 
 
 # lesson1 = Lesson.create!()

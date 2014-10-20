@@ -33,14 +33,14 @@
     <%= f.text_field :image %>
   </div>
 
-  <% if current_user.role == 'admin'%>
+  <% if current_user.role == 'ninja'%>
   <div class="field">
-    <%= f.label :Pick_a_role_admin_instructor_or_student %><br />
+    <%= f.label :Pick_a_role_ninja_instructor_or_student %><br />
     <%= f.text_field :role %>
   </div>
   <%end%>
 
-<% if current_user.role == 'admin'%>
+<% if current_user.role == 'student'%>
   <div class="field">
   <%= f.label :Pick_a_course %><br />
     <%Course.all.each do |course|  %>
@@ -54,7 +54,7 @@
 
   <% if current_user.role == 'instructor'%>
   <div class="field">
-  <%= f.label :Pick_a_course %><br />
+  <%= f.label :Pick_a_course_that_you_are_teaching %><br />
     <%Course.all.each do |course|  %>
       <%= check_box_tag "user[course_ids][]", course.id, @user.course_ids.include?(course.id) %>
       <%= course.name %><br />
