@@ -1,5 +1,7 @@
 BookingApp::Application.routes.draw do
   
+  match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+
 resources :sessions
 
 get 'logout', to: 'sessions#destroy', as: 'logout'
@@ -8,6 +10,7 @@ get 'logout', to: 'sessions#destroy', as: 'logout'
 
 
   resources :courses
+  resources :events
 
 
   resources :users
