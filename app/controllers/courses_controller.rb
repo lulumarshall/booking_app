@@ -31,7 +31,7 @@ class CoursesController < ApplicationController
       format.json { render json: @course }
     end
   end
-
+  
   # GET /courses/1/edit
   def edit
     @course = Course.find(params[:id])
@@ -52,7 +52,7 @@ class CoursesController < ApplicationController
       end
     end
   end
-
+  
   # PUT /courses/1
   # PUT /courses/1.json
   def update
