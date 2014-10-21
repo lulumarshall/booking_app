@@ -31,4 +31,13 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  
+    <div class="field">
+  <%= f.label :assign_a_student %><br />
+    <%User.all.each do |user|  %>
+      <%= check_box_tag "event[user_ids][]", user.id, @event.user_ids.include?(user.id) %>
+      <%= user.name %>
+    <%=user.role%><br />
+    <% end %>
+  </div>
 <% end %>
