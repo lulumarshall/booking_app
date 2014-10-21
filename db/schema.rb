@@ -19,22 +19,6 @@ ActiveRecord::Schema.define(:version => 20141021155347) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "courses", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.integer  "length"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.integer  "classroom_id"
-  end
-
-  create_table "courses_users", :id => false, :force => true do |t|
-    t.integer "course_id"
-    t.integer "user_id"
-  end
-
   create_table "events", :force => true do |t|
     t.string   "name"
     t.date     "start_at"

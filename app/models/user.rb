@@ -8,6 +8,12 @@ class User < ActiveRecord::Base
   validates :password, presence: true
   validates :email, presence: true
   validates :email, uniqueness: { case_sensitive: false}
+  
+  before_save :ensure_role_is_set
+
+  def ensure_role_is_set
+    self.role = :student if self.role.nil?
+  end
 
   def role?(role_to_compare)
   self.role.to_s == role_to_compare.to_s
