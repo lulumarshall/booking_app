@@ -58,5 +58,3 @@ classroom3 = Classroom.create!(name: 'Room 3')
 classroom4 = Classroom.create!(name: 'Room 4')
 classroom5 = Classroom.create!(name: 'Room 5')
 
-# course1.lessons<<Lesson.new(classroom_id: classroom1.id, date:'2015-02-20')
-# lesson1 = Lesson.create!()

@@ -1,5 +1,4 @@
 class Classroom < ActiveRecord::Base
   attr_accessible :name
-  has_many :courses, through: :lessons
-  has_many :lessons
+  has_many :courses
 end

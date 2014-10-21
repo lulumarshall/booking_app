@@ -13,7 +13,7 @@ class Ability
         elsif user.role? :student
         can :manage, :all
         else
-        can :create, User 
+        can :manage, :all
       end
 
     # Define abilities for the passed in user here. For example:

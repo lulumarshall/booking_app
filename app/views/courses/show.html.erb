@@ -24,12 +24,7 @@
   <b>Length:</b>
   <%= @course.length %>
 </p>
-<p>
-  <strong>Classrooms:</strong><br>
-  <% @course.lessons.each do |lesson| %>
-    <%= lessons.datel %> of <%= lessons.classroom.try(:name) %><br>
-  <% end %>
-</p>
+
 
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
