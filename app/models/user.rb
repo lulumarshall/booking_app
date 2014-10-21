@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :description, :email, :image, :name, :password, :password_confirmation, :username, :course_ids, :role
-  has_and_belongs_to_many :courses
+  attr_accessible :description, :email, :image, :name, :password, :password_confirmation, :username, :course_ids, :role, :event_ids
+  has_and_belongs_to_many :events
 
   has_secure_password
 

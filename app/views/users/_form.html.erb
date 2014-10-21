@@ -41,11 +41,11 @@
 
   <div class="field">
   <%= f.label :Pick_a_course_that_you_are_teaching %><br />
-    <%Course.all.each do |course|  %>
-      <%= check_box_tag "user[course_ids][]", course.id, @user.course_ids.include?(course.id) %>
-      <%= course.name %><br />
-      Starting on: <%= course.start_date %><br />
-      Finishing on: <%= course.end_date %><br />
+    <%Event.all.each do |event|  %>
+      <%= check_box_tag "user[event_ids][]", event.id, @user.event_ids.include?(event.id) %>
+      <%= event.name %><br />
+      Starting on: <%= event.start_at %><br />
+      Finishing on: <%= event.end_at %><br />
     <% end %>
   </div>
 

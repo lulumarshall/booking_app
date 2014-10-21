@@ -31,8 +31,8 @@
 
 <p>
 <b>Courses: </b>
-    <%@user.courses.each do |course|%>
- <li><%=link_to "#{course.name}", course_path %></li>
+    <%@user.events.each do |event|%>
+ <li><%=link_to "#{event.name}", event_path %></li>
   <%end%>
 </p>
 

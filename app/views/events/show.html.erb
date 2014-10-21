@@ -14,7 +14,10 @@
   <b>End at:</b>
   <%= @event.end_at %>
 </p>
-
+<p>
+  <b>End at:</b>
+  <%= @event.description %>
+</p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
