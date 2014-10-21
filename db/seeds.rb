@@ -80,6 +80,3 @@ classroom3 = Classroom.create!(name: 'Room 3')
 classroom4 = Classroom.create!(name: 'Room 4')
 classroom5 = Classroom.create!(name: 'Room 5')
 
-d = DateTime.now
-
-Event.create!(name: "event1", start_at: d, end_at: (d+1))

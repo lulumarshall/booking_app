@@ -28,10 +28,7 @@
     <%= f.date_select :end_at %>
   </div>
    <%= f.collection_select(:classroom_id, Classroom.all, :id, :name, prompt: true)%>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  
+ 
     <div class="field">
   <%= f.label :assign_a_student %><br />
     <%User.all.each do |user|  %>
@@ -40,4 +37,8 @@
     <%=user.role%><br />
     <% end %>
   </div>
+   <div class="actions">
+    <%= f.submit 'Create course' %>
+  </div>
 <% end %>
+
