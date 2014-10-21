@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :description, :email, :image, :name, :password, :password_confirmation, :username, :course_ids, :role, :event_ids
+  attr_accessible :description, :email, :image, :name, :password, :password_confirmation, :username, :course_ids, :role, :event_ids, :user_image, :remote_user_image_url
+  mount_uploader :user_image, UserImageUploader
   has_and_belongs_to_many :events
 
   has_secure_password
