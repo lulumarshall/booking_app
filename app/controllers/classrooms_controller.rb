@@ -1,7 +1,8 @@
 class ClassroomsController < ApplicationController
   # GET /classrooms
   # GET /classrooms.json
-  def index
+   authorize_resource
+   def index
     @classrooms = Classroom.all
 
     respond_to do |format|

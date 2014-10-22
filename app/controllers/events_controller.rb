@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   # GET /events
   # GET /events.json
+   authorize_resource
   def index
     @events = Event.all
 

@@ -31,10 +31,16 @@
  
     <div class="field">
   <%= f.label :assign_a_student %><br />
-    <%User.all.each do |user|  %>
-      <%= check_box_tag "event[user_ids][]", user.id, @event.user_ids.include?(user.id) %>
-      <%= user.name %>
-    <%=user.role%><br />
+    <%User.where(role: 'student').each do |student|  %>
+      <%= check_box_tag "event[student_ids][]", student.id, @event.student_ids.include?(student.id) %>
+      <%= student.name %>
+    <% end %>
+  </div>
+  <div class="field">
+  <%= f.label :assign_a_instructor %><br />
+    <%User.where(role: 'instructor').each do |instructor|  %>
+      <%= check_box_tag "event[instructor_ids][]", instructor.id, @event.instructor_ids.include?(instructor.id) %>
+      <%= instructor.name %>
     <% end %>
   </div>
    <div class="actions">

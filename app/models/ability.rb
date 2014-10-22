@@ -7,13 +7,13 @@ class Ability
         can :manage, :all
         elsif user.role? :instructor
         can :manage, :all
-        # can :update, Course do |course|
-        #     course.user_id ==user.id
-        # end
+        can :update, Course do |course|
+            course.user_id==user.id
+            end 
         elsif user.role? :student
-        can :manage, :all
+        can :create, User
         else
-        can :manage, :all
+        can :create, User
       end
 
     # Define abilities for the passed in user here. For example:
