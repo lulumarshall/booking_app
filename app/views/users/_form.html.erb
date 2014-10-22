@@ -35,11 +35,13 @@
     <%= f.text_field :remote_user_image_url %> 
     <%= f.label :remote_user_image_url %>
   </div>
-
+  
+<%if can? :update, User%>
   <div class="field">
     <%= f.label :Pick_a_role_ninja_instructor_or_student %><br />
     <%= f.text_field :role %>
   </div>
+  <%end%>
 
   <div class="field">
   <%= f.label :Pick_a_course_that_you_are_teaching %><br />

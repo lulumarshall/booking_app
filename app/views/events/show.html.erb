@@ -30,6 +30,7 @@
  <li><%=link_to "#{student.name}", user_path %></li>
   <%end%>
 </p>
-
+<%if can? :update, Event%>
 <%= link_to 'Edit', edit_event_path(@event) %> |
+<%end%>
 <%= link_to 'Back', events_path %>

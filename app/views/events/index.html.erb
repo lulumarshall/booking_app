@@ -29,12 +29,18 @@
     <td><%= event.end_at %></td>
     <td><%= event.classroom_id %></td>
     <td><%= link_to 'Show', event %></td>
+    <% event.instructor_ids.each do |i| %>
+    <% if i == current_user.id %>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
     <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
+  <%end%>
+    <%end%>
 <% end %>
 </table>
 <br />
 
  <%= paginate @events, theme: 'twitter-bootstrap'%> 
+ <% if can? :update, Event%>
 <%= link_to 'New Course', new_event_path %>
+<%end%>

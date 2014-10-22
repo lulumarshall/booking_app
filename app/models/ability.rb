@@ -3,16 +3,21 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-        if user.role? :ninja
-        can :manage, :all
-        elsif user.role? :instructor
-        can :manage, :all
-        can :update, Course do |course|
-            course.user_id==user.id
-            end 
-        elsif user.role? :student
+    if user.role? :ninja
+    can :manage, :all
+    elsif user.role? :instructor
+        can :read, :all
+        can :update, Classroom
+        # can :update, Event.all.each do |event|
+        #     event.instructor_ids == current_user.id
+        # end
+        can :create, :all
+        can :update, User, id: user.id
+    elsif user.role? :student
+        can :read, :all
         can :create, User
-        else
+        can :update, User, id: user.id
+    else
         can :create, User
       end
 

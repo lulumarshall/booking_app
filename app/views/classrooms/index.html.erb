@@ -9,12 +9,15 @@
   <tr>
     <td><%= classroom.name %></td>
     <td><%= link_to 'Show', classroom %></td>
+    <% if can? :update, classroom %>
     <td><%= link_to 'Edit', edit_classroom_path(classroom) %></td>
     <td><%= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
+    <%end%>
 <% end %>
 </table>
 
 <br />
-
+<% if can? :update, Classroom %>
 <%= link_to 'New Classroom', new_classroom_path %>
+<%end%>

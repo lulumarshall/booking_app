@@ -5,6 +5,7 @@
   <%= @classroom.name %>
 </p>
 
-
-<%= link_to 'Edit', edit_classroom_path(@classroom) %> |
+<%if can? :update, Classroom %>
+<%= link_to 'Edit', edit_classroom_path(@classroom) %> 
+<%end%>
 <%= link_to 'Back', classrooms_path %>
