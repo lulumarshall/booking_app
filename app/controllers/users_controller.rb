@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
- authorize_resource
+  authorize_resource
   def index
-    @users = User.order(:created_at).page(params[:page])
-
+    @q = User.order(:created_at).page(params[:page]).search(params[:q])
+    
+    @users = @q.result(distinct: true)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }

@@ -1,10 +1,12 @@
 class EventsController < ApplicationController
   # GET /events
   # GET /events.json
-   authorize_resource
+  authorize_resource
   def index
- 
-    @events = Event.order(:created_at).page(params[:page])
+    @q = Event.order(:created_at).page(params[:page]).search(params[:q])
+    @events = @q.result(distinct: true)
+    @q.build_condition
+    # @events = Event.order(:created_at).page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

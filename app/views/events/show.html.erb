@@ -18,11 +18,16 @@
   <b>End at:</b>
   <%= @event.description %>
 </p>
-
+<p>
+<b>Instructors: </b>
+    <%@event.instructors.each do |instructor|%>
+ <li><%=link_to "#{instructor.name}", user_path %></li>
+  <%end%>
+</p>
 <p>
 <b>Students: </b>
-    <%@event.users.each do |user|%>
- <li><%=link_to "#{user.name}", user_path %></li>
+    <%@event.students.each do |student|%>
+ <li><%=link_to "#{student.name}", user_path %></li>
   <%end%>
 </p>
 

@@ -1,27 +1,32 @@
-<h1>Listing users</h1>
+<h1>Profiles</h1>
+<%= search_form_for @q do |f| %>
+
+<p>
+  <%=f.label 'People Finder'%>
+  <%= f.text_field :name_cont %>
+</p>
+<p>
+  <%=f.submit%>
+</p>
+<%end %>
 
 <table>
   <tr>
-    <th>Email</th>
     <th>Name</th>
-    <th>Username</th>
-    <th>Description</th>
+    <th>Profile Pic</th>
     <th>Role</th>
   </tr>
 
-<% @users.each do |user| %>
+  <% @users.each do |user| %>
   <tr>
-    <td><%= user.email %></td>
     <td><%= user.name %></td>
-    <td><%= user.username %></td>
-    <td><%= user.description %></td>
-    <td><%= image_tag user.user_image.thumb.url%></td>
+    <td><%= link_to image_tag(user.user_image.thumb.url), user%></td>
     <td><%= user.role %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
-<% end %>
+  <% end %>
 </table>
 
 <br />
