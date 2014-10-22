@@ -3,7 +3,8 @@ class EventsController < ApplicationController
   # GET /events.json
    authorize_resource
   def index
-    @events = Event.all
+ 
+    @events = Event.order(:created_at).page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

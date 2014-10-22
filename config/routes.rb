@@ -10,10 +10,14 @@ get 'logout', to: 'sessions#destroy', as: 'logout'
 
 
   resources :courses
-  resources :events
+  resources :events do 
+    get 'page/:page', action: :index, on: :collection
+  end
 
 
-  resources :users
+  resources :users do
+    get 'page/:page', action: :index, on: :collection
+  end
 
   root to: 'users#new'
 
