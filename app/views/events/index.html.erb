@@ -1,4 +1,6 @@
-<h1>Listing courses</h1>
+<div class="event">
+
+    <h1>Listing courses</h1>
 <%=search_form_for @q do |f|%>
 <%= f.condition_fields do |c|%>
     <div>
@@ -41,4 +43,5 @@
 <br />
 
  <%= paginate @events, theme: 'twitter-bootstrap'%> 
+</div>
 
