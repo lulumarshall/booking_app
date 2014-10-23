@@ -13,3 +13,121 @@
  *= require_tree .
 
  */
+body {
+
+}
+.header{
+  padding-bottom: 2%;
+  background-color: aliceblue;
+
+}
+.sessions{
+  display:inline-block;
+  width:30%;
+  padding:2% 0 0 2%;
+}
+
+.topnavbar{
+  display:inline-block;
+  width:50%;
+}
+
+nav a{
+  margin-right: 5%;
+  border-right: 2px solid black;
+  padding-right: 5%;
+}
+
+.sidenavbar{
+  width:15%;
+  padding-left: 4%;
+  display:inline-block;
+  vertical-align: top;
+  margin-top:5%;
+}
+.sidenavbar nav a{
+  border:none;
+
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border:none;
+}
+
+.containerapp{
+  border: 2px solid black;
+  width:50%;
+  margin:5% auto 5% auto;
+  padding:0% 5% 2% 5%;
+  display:inline-block;
+  vertical-align: top;
+}
+.footer{
+  background-color: aliceblue;
+}
+footer{
+  font-size: 10px;
+  dislay:block;
+  width:10%;
+  margin:0 auto ;
+  padding-top:5%;
+  padding-bottom: 5%;
+
+}
+ol li{
+  list-style: none
+}
+.footermenu{
+  width:80%;
+  margin:0% auto;
+  padding-top: 2%;
+}
+tr th{
+  width:30%;
+  text-align: left;
+}
+tr td{
+  width:15%;
+  text-align: left;
+}
+
+.profile_image img{
+  border:2px solid black;
+  border-radius:100px;
+}
+.profile{
+  display:inline-block;
+  width:30%;
+  vertical-align: top;
+}
+.description{
+  display:inline-block;
+  text-align:justify;
+  width:68%;
+  vertical-align: top;
+}
+
+.edit_buttons{
+  width:10%;
+}
+.field_description textarea{
+  width:80%;
+}
+.field_student{
+  padding-bottom:3%;
+}
+.field_instructor{
+  padding-bottom:3%;
+}
+
+
+
+
+
+
+
+
+
+

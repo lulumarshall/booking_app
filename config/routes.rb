@@ -19,7 +19,7 @@ get 'logout', to: 'sessions#destroy', as: 'logout'
     get 'page/:page', action: :index, on: :collection
   end
 
-  root to: 'users#new'
+  root to: 'sessions#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

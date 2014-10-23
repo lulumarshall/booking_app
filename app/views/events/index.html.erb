@@ -41,6 +41,4 @@
 <br />
 
  <%= paginate @events, theme: 'twitter-bootstrap'%> 
- <% if can? :update, Event%>
-<%= link_to 'New Course', new_event_path %>
-<%end%>
+

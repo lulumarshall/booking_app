@@ -15,7 +15,6 @@ class Ability
         can :update, User, id: user.id
     elsif user.role? :student
         can :read, :all
-        can :create, User
         can :update, User, id: user.id
     else
         can :create, User

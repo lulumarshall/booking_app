@@ -8,26 +8,97 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% flash.each do |name, msg| %>
-    <div class="flash-message flash-message-<%= name %>">
-      <%= msg %>
-    </div>
+  <div class="header">
+  <div class="sessions">
+  <% flash.each do |name, msg| %>
+  <div class="flash-message"<%= name %>">
+    <%= msg %>
+  </div>
   <% end %>
-    <%if current_user %>
-    hello <%= current_user.username%> (<%= current_user.role%>)
-    <%=link_to "logout", logout_path%>
+  <%if current_user %>
+  hello <%= current_user.username%> (<%= current_user.role%>)
+  <%=link_to "logout", logout_path%>
   <%else%>
   <%=link_to "login", new_session_path%> or <%=link_to "signup", new_user_path%>
   <%end%>
-<nav>
-<%= link_to('Classrooms', classrooms_path) %>
-  <%= link_to('Courses', events_path) %>
-  <%= link_to('Profiles', users_path) %>
-  <%= link_to('Calendar', calendar_path) %>
 
-  
-</nav>
-<%= yield %>
+  <h1>BookingApp</h1>
+</div>
+ <div class="topnavbar">
+  <nav>
+    <%= link_to('Classrooms', classrooms_path) %></li>
+    <%= link_to('Courses', events_path) %>
+    <%= link_to('Profiles', users_path) %>
+    <%= link_to('Calendar', calendar_path) %>
+  </nav>
+</div>
+</div>
+<%if current_user%>
+<%if current_user.role != "student"%>
+<div class ="sidenavbar">
+  <nav>
+    <ul>
+    <li><%= link_to('Create Classroom', new_classroom_path) %></li>
+    <li><%= link_to('Create Course', new_event_path) %></li>
+    <li><%= link_to('Create Profile', new_user_path) %></li>
+  </ul>
+  </nav>
+</div>
+<%end%>
+<%end%>
+  <div class="containerapp">
+  <%= yield %>
+</div>
+<div class="footer">
+  <div class="footermenu">
+    <table>
+      <tbody>
+        <tr>
+          <th colspan = "2">Lulu Booking </th>
+          <th colspan="2">Popular Courses</th>
+          <th>Other Information</th>
+        </tr>
+        <tr>
+        <td align ='left'>
+          Unit 1 (Ground Floor) <br>
+          London House <br>
+          London E15 1NY<br>
+          United Kingdom<br>
+          Tel:+44 (0)208 123 4567<br>
+          Email:<%= link_to "lulubooking@booking.com", "http://www.google.com" %>
+        </td>
+        <td>
+        </td>
+        <td>
+          <ol>
+            <li><%= link_to "WDI-1", "http://www.google.com" %></li>
+            <li><%= link_to "WDI-2", "http://www.google.com" %></li>
+            <li><%= link_to "WDI-3", "http://www.google.com" %></li>
+            <li><%= link_to "WDI-4", "http://www.google.com" %></li>
+          </ol>
+        </td>
+        <td>
+          <ol>
+            <li><%= link_to "WDI-5", "http://www.google.com" %></li>
+            <li><%= link_to "WDI-6", "http://www.google.com" %></li>
+            <li><%= link_to "WDI-7", "http://www.google.com"%></li>
+            <li><%= link_to "WDI-7", "http://www.google.com"%></li>
+          </ol>
+        </td>
+        <td>
+          <ol>
+            <li><%= link_to "About us", "http://www.google.com" %></li>
+            <li><%= link_to "Contact", "http://www.google.com" %></li>
+            <li><%= link_to "About us", "http://www.google.com" %></li>
+            <li><%= link_to "About us", "http://www.google.com" %></li>
+          </ol>
+        </td>
+        </tr>
+      </tbody>
+  </table>
 
+  </div>
+  <footer>Lulu Copyright 2014</footer>
+</div>
 </body>
 </html>
