@@ -165,6 +165,14 @@ tr td{
   -webkit-box-shadow: 1px 2px 50px rgba(110, 255, 255, 0.4);*/
   box-shadow: 1px 1px 10px rgba(110, 255, 255, 0.4);
 }
+.log_in form{
+  width:20%;
+  margin:0 auto;
+}
+.log_in h1{
+  width:20%;
+  margin:0 auto;
+}
 .sign_up{
   display:inline-block;
 width:69%;
