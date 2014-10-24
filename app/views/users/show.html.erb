@@ -1,26 +1,29 @@
 <div class="event">
   <p id="notice"><%= notice %></p>
-
+  <p>
+   <b> <%= @user.username %></b>
+  </p>
 <div class="profile_image">
 <%= image_tag @user.user_image.profile.url%>
 </div>
+<br />
+<br />
 <div class='profile'>
-<p>
-  <b>Email:</b>
+  <p>
+    <b>Full Name:</b><br />
+    <%= @user.name %>
+  </p>
+
+  <p>
+  <b>Email:</b><br />
   <%= @user.email %>
 </p>
 
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
+
+
 
 <p>
-  <b>Username:</b>
-  <%= @user.username %>
-</p>
-<p>
-  <b>Role:</b>
+  <b>Role:</b></br>
   <%= @user.role %>
 </p>
 </div>

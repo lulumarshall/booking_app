@@ -19,8 +19,9 @@
 
   <% @users.each do |user| %>
   <tr>
-    <td><%= link_to image_tag(user.user_image.thumb.url), user%><br>
-  <%= link_to user.name, user %></td>
+    <td><%= link_to user.name, user %><br /><div class="profpic">
+      <%= link_to image_tag(user.user_image.thumb.url), user%></div><br /> <br />
+  </td>
     
     <td><%= user.role %></td>
     <% if can? :update, user %>
