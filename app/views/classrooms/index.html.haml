@@ -1,0 +1,13 @@
+.event
+  %h1 Listing classrooms
+  %table
+    %tr
+      %th Name
+    - @classrooms.each do |classroom|
+      %tr
+        %td= classroom.name
+        %td= link_to 'Show', classroom
+        - if can? :update, classroom
+          %td= link_to 'Edit', edit_classroom_path(classroom)
+          %td= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' }
+  %br/

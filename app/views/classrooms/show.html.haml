@@ -1,0 +1,10 @@
+.event
+  %p#notice= notice
+  %p
+    %b Name:
+    = @classroom.name
+  - if can? :update, Classroom
+    = link_to 'Edit', edit_classroom_path(@classroom)
+  = link_to 'Back', classrooms_path
+
+  

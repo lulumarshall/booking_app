@@ -1,0 +1,31 @@
+.event
+  %h1 Listing courses
+  = search_form_for @q do |f|
+    = f.condition_fields do |c|
+      %div
+        = c.attribute_fields do |a|
+          = a.attribute_select associations: [:user]
+        = c.predicate_select
+        = c.value_fields do |v|
+          = v.text_field :value
+    = f.submit
+  %table
+    %tr
+      %th Name
+      %th Start at
+      %th End at
+      %th Classroom
+      %th
+    - @events.each do |event|
+      %tr
+        %td= event.name
+        %td= event.start_at
+        %td= event.end_at
+        %td= event.classroom_id
+        %td= link_to 'Show', event
+        - event.instructor_ids.each do |i|
+          - if i == current_user.id
+            %td= link_to 'Edit', edit_event_path(event)
+            %td= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
+  %br/
+  = paginate @events, theme: 'twitter-bootstrap'
