@@ -1,5 +1,5 @@
 .event
-  %h1 Edit Course
+  %h1 New course
   = render 'form'
-  = link_to 'Show', @event 
+  = raw(event_calendar)
   = link_to 'Back', events_path

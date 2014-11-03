@@ -1,0 +1,27 @@
+.event
+  %h1 Profiles
+  = search_form_for @q do |f|
+    %p
+      = f.label 'People Finder'
+      = f.text_field :name_cont
+    %p
+      = f.submit
+  %table
+    %tr
+      %th Name
+      %th Role
+    - @users.each do |user|
+      %tr
+        %td
+          = link_to user.name, user
+          %br/
+          .profpic
+            = link_to image_tag(user.user_image.thumb.url), user
+          %br/
+          %br/
+        %td= user.role
+        - if can? :update, user
+          %td= link_to 'Edit', edit_user_path(user)
+          %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+  %br/
+  = paginate @users, theme: 'twitter-bootstrap'

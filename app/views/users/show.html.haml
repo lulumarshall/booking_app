@@ -1,0 +1,34 @@
+.event
+  %p#notice= notice
+  %p
+    %b
+      = @user.username
+  .profile_image
+    = image_tag @user.user_image.profile.url
+  %br/
+  %br/
+  .profile
+    %p
+      %b Full Name:
+      %br/
+      = @user.name
+    %p
+      %b Email:
+      %br/
+      = @user.email
+    %p
+      %b Role:
+      = @user.role
+  .description
+    %p
+      %b Description:
+      = @user.description
+    %p
+      %b Courses:
+      - @user.events.each do |event|
+        %li= link_to "#{event.name}", event_path
+  .edit_buttons
+    - if can? :create, User
+      = link_to 'Edit', edit_user_path(@user)
+      |
+    = link_to 'Back', users_path
